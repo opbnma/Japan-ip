@@ -28,7 +28,7 @@ get_japan_ip() {
 
 	#该文件由IPIP维护更新，大约一月一次更新(也可以用我放在国内的存储的版本，2018-9-8日版)
 	[ -f japan.txt ] && mv japan.txt japan.txt.old
-	wget https://github.com/17mon/japan_ip_list/blob/master/japan.txt
+	wget https://raw.githubusercontent.com/opbnma/Japan-ip/main/japan.txt
 	cat japan.txt |grep 'js-file-line">' |awk -F'js-file-line">' '{print $2}' |awk -F'<' '{print $1}' >> japan_ip.txt
 	rm -rf japan.txt
 	#wget https://qiniu.wsfnk.com/japan_ip.txt
